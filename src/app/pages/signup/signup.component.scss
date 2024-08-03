@@ -1,0 +1,26 @@
+.login {
+  height: 100vh;
+
+  &-row {
+    height: 100%;
+  }
+
+  &-container {
+    height: auto;
+    padding: 2rem 3rem;
+    border: 1px solid #fff;
+    border-radius: 10px;
+  }
+}
+
+.p-password-input,
+.p-inputtext {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.p-calendar,
+.p-inputmask,
+p-inputmask {
+  width: 100%;
+}
