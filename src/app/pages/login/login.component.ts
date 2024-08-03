@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { ButtonModule } from 'primeng/button';
@@ -6,7 +6,6 @@ import { InputGroupModule } from 'primeng/inputgroup';
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
-
 
 @Component({
   selector: 'app-login',
@@ -17,10 +16,11 @@ import { PasswordModule } from 'primeng/password';
     InputGroupAddonModule,
     InputTextModule,
     PasswordModule,
-    ButtonModule 
+    ButtonModule,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
+  encapsulation: ViewEncapsulation.None,
 })
 export class LoginComponent {
   value!: string;

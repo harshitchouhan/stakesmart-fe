@@ -6,10 +6,12 @@
 @layer reset {
   button {
     /* CSS to Reset */
-    margin: 0;
-    padding: 0;
+    padding: 0.5rem 0.8rem !important;
+    border-radius: 6px !important;
   }
 }
+
+@import "bootstrap/scss/bootstrap-reboot.scss" layer(reset);
 
 @import "bootstrap/scss/bootstrap";
 

@@ -7,6 +7,8 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule, CommonModule],
   templateUrl: './pages.component.html',
-  styleUrl: './pages.component.scss',
+  styleUrl: './pages.component.scss'
 })
-export class PagesComponent {}
+export class PagesComponent {
+
+}
