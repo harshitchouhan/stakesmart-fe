@@ -20,6 +20,10 @@
 
 .forgot-password {
   color: var(--primary-color);
-  cursor: pointer;
+
   text-align: right;
+
+  & span {
+    cursor: pointer;
+  }
 }
