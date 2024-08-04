@@ -7,6 +7,13 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+    children: [
+      {
+        path: 'mines',
+        loadChildren: () =>
+          import('./../../games/mines/mines.module').then((m) => m.MinesModule),
+      },
+    ],
   },
 ];
 

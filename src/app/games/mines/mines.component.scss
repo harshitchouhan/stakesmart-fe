@@ -1,0 +1,32 @@
+.mines {
+  border: 1px solid #fff;
+  border-radius: 6px;
+
+  display: flex;
+
+  &-left-container {
+    padding: 1rem;
+    background-color: #9dc0ff54;
+    max-width: 20rem;
+    width: 20rem;
+  }
+
+  &-right-container {
+    padding: 1rem;
+  }
+
+  & .p-tabview-nav {
+    padding: 0;
+
+    & li {
+      width: 50%;
+    }
+
+    & .p-tabview-nav-link {
+        justify-content: center;
+        text-decoration: none;
+        color: #fff;
+        padding: 0.8rem;
+    }
+  }
+}
