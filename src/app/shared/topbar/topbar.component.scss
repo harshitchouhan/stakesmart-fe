@@ -1,0 +1,10 @@
+.topbar {
+  
+  &-container {
+    height: 60px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1rem;
+  }
+}
