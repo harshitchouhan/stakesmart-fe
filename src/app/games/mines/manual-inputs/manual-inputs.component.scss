@@ -1,0 +1,23 @@
+label {
+  font-size: 0.85rem;
+}
+
+ul {
+  padding-left: 0;
+}
+
+p-inputnumber {
+  width: 100%;
+
+  & .p-inputnumber {
+    width: 100%;
+  }
+}
+
+.bet-btn {
+  width: 100%;
+
+  & button {
+    width: 100%;
+  }
+}
