@@ -7,13 +7,14 @@
   &-left-container {
     padding: 1rem;
     background-color: #9dc0ff54;
-    max-width: 22rem;
-    width: 22rem;
+    max-width: 20rem;
+    width: 20rem;
   }
 
   &-right-container {
     padding: 1rem;
     min-height: 40rem;
+    width: calc(100% - 20rem);
   }
 
   & .p-tabview-nav {
@@ -24,10 +25,109 @@
     }
 
     & .p-tabview-nav-link {
-        justify-content: center;
-        text-decoration: none;
-        color: #fff;
-        padding: 0.8rem;
+      justify-content: center;
+      text-decoration: none;
+      color: #fff;
+      padding: 0.8rem;
+    }
+  }
+
+  &-container {
+    position: relative;
+    display: grid;
+    grid-gap: 1em 0.75em;
+    padding: 0.75em 0.75em 1em;
+    width: 100%;
+    max-width: 35rem;
+    grid-template-columns: repeat(5, auto);
+    margin: auto;
+    height: 100%;
+  }
+
+  &-btn {
+    position: relative;
+    font-size: 1.5em;
+    text-shadow: 0 3px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5em;
+    transition-duration: 300ms;
+    transition-property: background, box-shadow;
+    border: none;
+    background: transparent;
+  }
+
+  &-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    animation-fill-mode: forwards;
+    border-radius: 0.5em;
+    transition-duration: 300ms;
+    transition-property: transform, background, box-shadow;
+    background: #9dc0ff54;
+    box-shadow: 0 0.3em #213743;
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .mines {
+    flex-direction: column-reverse;
+
+    &-left-container {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    &-right-container {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    &-container {
+      height: 40rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mines {
+    &-right-container {
+      min-height: 30rem;
+    }
+
+    &-container {
+      height: 30rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .mines {
+    &-right-container {
+      padding: 0;
+    }
+    
+    &-container {
+      grid-gap: .5rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .mines {
+    &-right-container {
+      min-height: 26rem;
+    }
+    
+    &-container {
+      height: 26rem;
     }
   }
 }

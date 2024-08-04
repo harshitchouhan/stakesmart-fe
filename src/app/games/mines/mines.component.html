@@ -14,7 +14,7 @@
             <p-tabPanel header="Header II" [disabled]="true">
                 <ng-template pTemplate="header">
                     <div class="flex align-items-center gap-2">
-                        <span class="font-bold white-space-nowrap m-0" pTooltip="Coming Soon" >
+                        <span class="font-bold white-space-nowrap m-0" pTooltip="Coming Soon">
                             Auto
                         </span>
                     </div>
@@ -26,6 +26,12 @@
         </p-tabView>
     </div>
     <div class="mines-right-container">
-        mines-right-container
+        <div class="mines-container">
+            <ng-container *ngFor="let mine of mines; let i = index">
+                <button class="mines-btn">
+                    <div class="mines-cover"></div>
+                </button>
+            </ng-container>
+        </div>
     </div>
 </div>
