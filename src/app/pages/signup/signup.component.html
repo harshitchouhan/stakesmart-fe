@@ -39,7 +39,7 @@
                                             <p-inputGroupAddon>
                                                 <i class="pi pi-phone"></i>
                                             </p-inputGroupAddon>
-                                            <p-inputMask mask="(+99) 99999-99999" [(ngModel)]="value2"
+                                            <p-inputMask prefix="+91" mask="(+99) 99999-99999" [(ngModel)]="value2"
                                                 placeholder="(+99) 99999-99999" name="phoneNumber" />
                                         </p-inputGroup>
                                     </div>
@@ -94,14 +94,14 @@
                                                 <i class="pi pi-lock"></i>
                                             </p-inputGroupAddon>
                                             <p-password [(ngModel)]="value" name="Harshit" [feedback]="false"
-                                                [toggleMask]="true" placeholder="Password" />
+                                                [toggleMask]="true" placeholder="Confirm Password" />
                                         </p-inputGroup>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="d-flex align-items-center justify-content-end">
-                                <p-button label="Next" />
+                                <p-button label="Next" (click)="openOtpDialog()" />
                             </div>
                         </form>
                     </div>
