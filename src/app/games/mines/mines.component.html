@@ -28,10 +28,19 @@
     <div class="mines-right-container">
         <div class="mines-container">
             <ng-container *ngFor="let mine of mines; let i = index">
-                <button class="mines-btn">
-                    <div class="mines-cover"></div>
+                <button class="mines-btn" (click)="onMineClick(mine)">
+                    <img *ngIf="mine.revealed && mine.bomb && selectedMine.id === mine.id" src="assets/mineEffect.webp"
+                        class="smoke-effect" alt="Bomb Smoke">
+                    <div *ngIf="mine.revealed && mine.bomb" class="bomb" [ngClass]="{'revealed': selectedMine.id === mine.id}"></div>
+                    <div *ngIf="mine.revealed && !mine.bomb" class="gem"></div>
+                    <div *ngIf="selectedMinesIds.includes(mine.id)" class="gem"
+                        [ngClass]="{'revealed selected': selectedMinesIds.includes(mine.id)}"></div>
+                    <div class="mines-cover" [ngClass]="{'selected': selectedMinesIds.includes(mine.id)}"></div>
                 </button>
             </ng-container>
         </div>
     </div>
 </div>
+
+<audio #beepAudio src="assets/select-sound.mp3" preload="auto"></audio>
+<audio #bombAudio src="assets/bomb.mp3" preload="auto"></audio>
