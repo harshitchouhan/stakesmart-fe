@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { AvatarModule } from 'primeng/avatar';
 import { ButtonModule } from 'primeng/button';
 import { DividerModule } from 'primeng/divider';
 import { DialogService } from 'primeng/dynamicdialog';
@@ -10,9 +12,6 @@ import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { AvatarModule } from 'primeng/avatar';
-import { RouterModule } from '@angular/router';
-
 
 @Component({
   selector: 'app-login',
@@ -26,12 +25,12 @@ import { RouterModule } from '@angular/router';
     ButtonModule,
     DividerModule,
     AvatarModule,
-    RouterModule
+    RouterModule,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
   encapsulation: ViewEncapsulation.None,
-  providers: [DialogService]
+  providers: [DialogService],
 })
 export class LoginComponent {
   value!: string;
@@ -51,7 +50,7 @@ export class LoginComponent {
       header: 'Forgot Password',
       width: '33rem',
       modal: true,
-      draggable: true
+      draggable: true,
     });
 
     this.ref.onClose.subscribe((response: any) => {

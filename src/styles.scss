@@ -31,7 +31,8 @@ body {
 }
 
 .p-inputtext:enabled:focus,
-.p-dropdown:not(.p-disabled).p-focus {
+.p-dropdown:not(.p-disabled).p-focus,
+.p-button:focus {
   box-shadow: none;
 }
 
