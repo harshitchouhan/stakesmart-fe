@@ -1,0 +1,18 @@
+.header {
+  box-shadow: #0003 0 4px 6px -1px, #0000001f 0 2px 4px -1px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background-color: #1d222b;
+}
+
+.content {
+  margin-top: 3.75rem;
+}
+
+@media only screen and (max-width: 992px) {
+  .content {
+    margin-top: 5rem;
+  }
+}
