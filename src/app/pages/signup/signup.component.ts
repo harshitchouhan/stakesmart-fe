@@ -47,7 +47,7 @@ export class SignupComponent {
   date!: any;
 
   ref!: any;
-  activeIndex: any = 1;
+  activeIndex: any = 0;
 
   constructor(
     private titleService: Title,
