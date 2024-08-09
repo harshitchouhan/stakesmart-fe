@@ -1,11 +1,11 @@
 <div class="container signup">
-    <div class="row align-items-lg-center mt-5 mt-lg-0 justify-content-center signup-row">
+    <div class="row align-items-lg-center mt-3 mt-lg-0 justify-content-center signup-row">
         <div class="col-lg-10">
             <p class="text-center signup-heading-primary">Create an Account</p>
             <div class="signup-container">
                 <div class="row">
                     <div class="col-md-12">
-                        
+
                         <form>
                             <p-tabView styleClass="tabview-custom">
                                 <p-tabPanel>
@@ -17,9 +17,7 @@
                                             </div>
                                         </div>
                                     </ng-template>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-                                    </p>
+                                    <app-player-signup></app-player-signup>
                                 </p-tabPanel>
                                 <p-tabPanel header="Header II">
                                     <ng-template pTemplate="header">
@@ -36,106 +34,13 @@
                                 </p-tabPanel>
                             </p-tabView>
 
-                            <!-- <div class="mb-3">
-                                <div class="row">
-                                    <div class="col-md-6 col-xl-3 mt-3 mt-xl-0">
-                                        <p-inputGroup>
-                                            <p-inputGroupAddon>
-                                                <i class="pi pi-user"></i>
-                                            </p-inputGroupAddon>
-                                            <input pInputText placeholder="First Name" />
-                                        </p-inputGroup>
-                                    </div>
-                                    <div class="col-md-6 col-xl-3 mt-3 mt-xl-0">
-                                        <p-inputGroup>
-                                            <p-inputGroupAddon>
-                                                <i class="pi pi-user"></i>
-                                            </p-inputGroupAddon>
-                                            <input pInputText placeholder="Last Name" />
-                                        </p-inputGroup>
-                                    </div>
-                                    <div class="col-md-6 col-xl-3 mt-3 mt-xl-0">
-                                        <p-inputGroup>
-                                            <p-inputGroupAddon>
-                                                <i class="pi pi-calendar"></i>
-                                            </p-inputGroupAddon>
-                                            <p-calendar [(ngModel)]="date" name="dob" placeholder="Date of Birth" />
-                                        </p-inputGroup>
-                                    </div>
-                                    <div class="col-md-6 col-xl-3 mt-3 mt-xl-0">
-                                        <p-inputGroup>
-                                            <p-inputGroupAddon>
-                                                <i class="pi pi-phone"></i>
-                                            </p-inputGroupAddon>
-                                            <p-inputMask prefix="+91" mask="(+99) 99999-99999" [(ngModel)]="value2"
-                                                placeholder="(+99) 99999-99999" name="phoneNumber" />
-                                        </p-inputGroup>
-                                    </div>
-                                </div>
-                                <div class="row mt-lg-3">
-                                    <div class="col-lg-6 mt-3 mt-lg-0">
-                                        <p-inputGroup>
-                                            <p-inputGroupAddon>
-                                                <i class="pi pi-user"></i>
-                                            </p-inputGroupAddon>
-                                            <input pInputText placeholder="User Name" />
-                                        </p-inputGroup>
-                                    </div>
-                                    <div class="col-lg-6 mt-3 mt-lg-0">
-                                        <p-inputGroup>
-                                            <p-inputGroupAddon>
-                                                <i class="pi pi-inbox"></i>
-                                            </p-inputGroupAddon>
-                                            <input pInputText placeholder="Email Address" />
-                                        </p-inputGroup>
-                                    </div>
-                                </div>
-                                <div class="row mt-lg-3">
-                                    <div class="col-lg-6 mt-3 mt-lg-0">
-                                        <p-inputGroup>
-                                            <p-inputGroupAddon>
-                                                <i class="pi pi-lock"></i>
-                                            </p-inputGroupAddon>
-
-
-                                            <p-password [(ngModel)]="value" name="Harshit" [toggleMask]="true"
-                                                placeholder="Password">
-                                                <ng-template pTemplate="header">
-                                                    <h6>Pick a password</h6>
-                                                </ng-template>
-                                                <ng-template pTemplate="footer">
-                                                    <p-divider />
-                                                    <p class="mt-2">Suggestions</p>
-                                                    <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
-                                                        <li>At least one lowercase</li>
-                                                        <li>At least one uppercase</li>
-                                                        <li>At least one numeric</li>
-                                                        <li>Minimum 8 characters</li>
-                                                    </ul>
-                                                </ng-template>
-                                            </p-password>
-                                        </p-inputGroup>
-                                    </div>
-                                    <div class="col-lg-6 mt-3 mt-lg-0">
-                                        <p-inputGroup>
-                                            <p-inputGroupAddon>
-                                                <i class="pi pi-lock"></i>
-                                            </p-inputGroupAddon>
-                                            <p-password [(ngModel)]="value" name="Harshit" [feedback]="false"
-                                                [toggleMask]="true" placeholder="Confirm Password" />
-                                        </p-inputGroup>
-                                    </div>
-                                </div>
-                            </div> -->
-
                             <p-divider align="center" type="solid">
                                 <b>OR</b>
                             </p-divider>
 
                             <div class="text-center">
-                                <p-avatar
-                                    image="assets/google-symbol.png"
-                                    styleClass="mr-2" size="xlarge" shape="square" styleClass="sso-icons" />
+                                <p-avatar image="assets/google-symbol.png" styleClass="mr-2" size="xlarge"
+                                    shape="square" styleClass="sso-icons" />
                             </div>
                             <p class="mt-3 text-center">
                                 Already have an account? <b><a [routerLink]="'/login'">Sign In</a></b>

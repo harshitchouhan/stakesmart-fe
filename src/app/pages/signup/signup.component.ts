@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, ViewEncapsulation } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 import { AvatarModule } from 'primeng/avatar';
 import { BadgeModule } from 'primeng/badge';
 import { ButtonModule } from 'primeng/button';
@@ -17,28 +18,25 @@ import { PasswordModule } from 'primeng/password';
 import { TabViewModule } from 'primeng/tabview';
 
 import { OtpComponent } from '../../shared/otp/otp.component';
-import { RouterModule } from '@angular/router';
+import { PlayerSignupComponent } from './player-signup/player-signup.component';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
   imports: [
     FormsModule,
-    InputGroupModule,
-    InputGroupAddonModule,
-    InputTextModule,
-    PasswordModule,
+
     ButtonModule,
-    CalendarModule,
+
     CommonModule,
-    InputMaskModule,
+
     DividerModule,
-    InputNumberModule,
-    OtpComponent,
+
     TabViewModule,
     BadgeModule,
     AvatarModule,
-    RouterModule
+    RouterModule,
+    PlayerSignupComponent,
   ],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss',

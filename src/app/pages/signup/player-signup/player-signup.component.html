@@ -1,0 +1,70 @@
+<div class="row mt-2">
+    <div class="col-12 col-lg-4">
+        <p-inputGroup>
+            <p-inputGroupAddon>
+                <i class="pi pi-user"></i>
+            </p-inputGroupAddon>
+            <input pInputText pKeyFilter="alpha" placeholder="First Name" />
+        </p-inputGroup>
+    </div>
+    <div class="col-12 mt-4 mt-lg-0 col-lg-4">
+        <p-inputGroup>
+            <p-inputGroupAddon>
+                <i class="pi pi-user"></i>
+            </p-inputGroupAddon>
+            <input pInputText pKeyFilter="alpha" placeholder="Last Name" />
+        </p-inputGroup>
+    </div>
+    <div class="col-12 mt-4 mt-lg-0 col-lg-4">
+        <p-inputGroup>
+            <p-inputGroupAddon>
+                <i class="pi pi-envelope"></i>
+            </p-inputGroupAddon>
+            <input pInputText type="email" placeholder="Email" />
+        </p-inputGroup>
+    </div>
+    <div class="col-12 mt-4 col-lg-6">
+        <p-inputGroup>
+            <p-inputGroupAddon>
+                <i class="pi pi-lock"></i>
+            </p-inputGroupAddon>
+            <p-password [toggleMask]="true" placeholder="Password">
+                <ng-template pTemplate="header">
+                    <h6>Pick a password</h6>
+                </ng-template>
+                <ng-template pTemplate="footer">
+                    <p-divider />
+                    <p class="mt-2">Suggestions</p>
+                    <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
+                        <li>At least one lowercase</li>
+                        <li>At least one uppercase</li>
+                        <li>At least one numeric</li>
+                        <li>Minimum 8 characters</li>
+                    </ul>
+                </ng-template>
+            </p-password>
+        </p-inputGroup>
+    </div>
+    <div class="col-12 mt-4 col-lg-6">
+        <p-inputGroup>
+            <p-inputGroupAddon>
+                <i class="pi pi-lock"></i>
+            </p-inputGroupAddon>
+            <p-password [toggleMask]="true" placeholder="Confirm Password">
+                <ng-template pTemplate="header">
+                    <h6>Pick a password</h6>
+                </ng-template>
+                <ng-template pTemplate="footer">
+                    <p-divider />
+                    <p class="mt-2">Suggestions</p>
+                    <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
+                        <li>At least one lowercase</li>
+                        <li>At least one uppercase</li>
+                        <li>At least one numeric</li>
+                        <li>Minimum 8 characters</li>
+                    </ul>
+                </ng-template>
+            </p-password>
+        </p-inputGroup>
+    </div>
+</div>
