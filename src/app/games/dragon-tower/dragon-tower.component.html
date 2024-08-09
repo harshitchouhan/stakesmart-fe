@@ -1,0 +1,48 @@
+<div class="game">
+    <div class="game-left-container">
+        <p-tabView styleClass="tabview-custom">
+            <p-tabPanel>
+                <ng-template pTemplate="header">
+                    <div class="flex align-items-center gap-2">
+                        <span class="font-bold white-space-nowrap m-0">
+                            Manual
+                        </span>
+                    </div>
+                </ng-template>
+                <app-manual-inputs></app-manual-inputs>
+            </p-tabPanel>
+            <p-tabPanel header="Header II" [disabled]="true">
+                <ng-template pTemplate="header">
+                    <div class="flex align-items-center gap-2">
+                        <span class="font-bold white-space-nowrap m-0" pTooltip="Coming Soon">
+                            Auto
+                        </span>
+                    </div>
+                </ng-template>
+                <p>
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...
+                </p>
+            </p-tabPanel>
+        </p-tabView>
+    </div>
+    <div class="game-right-container">
+        <div class="game-container">
+            <ng-container *ngFor="let mine of mines; let i = index">
+                <button class="game-btn" (click)="onMineClick(mine)">
+                    <img *ngIf="mine.revealed && mine.bomb && selectedMine.id === mine.id" src="assets/mineEffect.webp"
+                        class="smoke-effect" alt="Bomb Smoke">
+                    <div *ngIf="mine.revealed && mine.bomb" class="bomb"
+                        [ngClass]="{'revealed': selectedMine.id === mine.id}"></div>
+                    <div *ngIf="mine.revealed && !mine.bomb" class="gem"></div>
+                    <div *ngIf="selectedMinesIds.includes(mine.id)" class="gem"
+                        [ngClass]="{'revealed selected': selectedMinesIds.includes(mine.id)}"></div>
+                    <div class="game-cover active"
+                        [ngClass]="{'selected': selectedMinesIds.includes(mine.id), 'active': activeRow.includes(i)}"></div>
+                </button>
+            </ng-container>
+        </div>
+    </div>
+</div>
+
+<audio #beepAudio src="assets/select-sound.mp3" preload="auto"></audio>
+<audio #bombAudio src="assets/bomb.mp3" preload="auto"></audio>

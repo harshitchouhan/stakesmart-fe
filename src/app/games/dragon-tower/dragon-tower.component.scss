@@ -1,0 +1,202 @@
+.game {
+    border: 1px solid #fff;
+    border-radius: 6px;
+  
+    display: flex;
+  
+    &-left-container {
+      padding: 1rem;
+      background-color: #9dc0ff54;
+      max-width: 20rem;
+      width: 20rem;
+    }
+  
+    &-right-container {
+      padding: 1rem;
+      min-height: 40rem;
+      width: calc(100% - 20rem);
+      background: url('../../../assets/dragon-tower-bg.webp');
+      background-size: contain;
+    }
+  
+    & .p-tabview-nav {
+      padding: 0;
+  
+      & li {
+        width: 50%;
+      }
+  
+      & .p-tabview-nav-link {
+        justify-content: center;
+        text-decoration: none;
+        color: #fff;
+        padding: 0.8rem;
+      }
+    }
+  
+    &-container {
+      position: relative;
+      display: grid;
+      grid-gap: 1em 0.75em;
+      padding: 0.75em 0.75em 1em;
+      width: 100%;
+      max-width: 35rem;
+      grid-template-columns: repeat(3, auto);
+      margin: auto;
+      height: 100%;
+      border: 1rem solid #56687A;
+      border-radius: 10px;
+    }
+  
+    &-btn {
+      position: relative;
+      font-size: 1.5em;
+      text-shadow: 0 3px 2px rgba(0, 0, 0, 0.1);
+      border-radius: 0.5em;
+      transition-duration: 300ms;
+      transition-property: background, box-shadow;
+      border: none;
+      background: transparent;
+  
+      & .gem.selected {
+        background-color: #071824;
+        border-radius: 6px;
+      }
+    }
+  
+    &-cover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      animation-fill-mode: forwards;
+      border-radius: 0.5em;
+      transition-duration: 300ms;
+      transition-property: transform, background, box-shadow;
+      background: #9dc0ff54;
+      box-shadow: 0 0.3em #213743;
+  
+      &::after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+      }
+  
+      &:hover {
+        transform: translateY(-0.15em);
+      }
+  
+      &:not(.selected):hover {
+        background-color: #557086;
+        box-shadow: 0 0.3em #213743;
+      }
+  
+      &.selected {
+        box-shadow: none;
+        transform: translateY(0);
+      }
+
+      &.active {
+        background: rgb(127 173 255);
+      }
+    }
+  }
+  
+  .bomb,
+  .gem {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-size: 30%;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+    animation-name: svelte-zf3lq7-backgroundScale;
+  
+    z-index: 1;
+  
+    &:not(.revealed) {
+      opacity: 0.3;
+      transform: scale(0.7);
+    }
+  }
+  
+  .bomb {
+    background-image: url("./../../../assets/death.png");
+    z-index: 2;
+  }
+  
+  .gem {
+    background-image: url("./../../../assets/egg.png");
+  }
+  
+  .smoke-effect {
+    width: 150%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+  
+  @media only screen and (max-width: 992px) {
+    .game {
+      flex-direction: column-reverse;
+  
+      &-left-container {
+        max-width: 100%;
+        width: 100%;
+      }
+  
+      &-right-container {
+        max-width: 100%;
+        width: 100%;
+      }
+  
+      &-container {
+        height: 40rem;
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .game {
+      &-right-container {
+        min-height: 30rem;
+      }
+  
+      &-container {
+        height: 30rem;
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 650px) {
+    .game {
+      &-right-container {
+        padding: 0;
+      }
+  
+      &-container {
+        grid-gap: 0.5rem;
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 580px) {
+    .game {
+      &-right-container {
+        min-height: 26rem;
+      }
+  
+      &-container {
+        height: 26rem;
+      }
+    }
+  }
+  

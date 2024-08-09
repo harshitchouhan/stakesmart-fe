@@ -13,6 +13,13 @@ const routes: Routes = [
         loadChildren: () =>
           import('./../../games/mines/mines.module').then((m) => m.MinesModule),
       },
+      {
+        path: 'dragon-tower',
+        loadChildren: () =>
+          import('./../../games/dragon-tower/dragon-tower.module').then(
+            (m) => m.DragonTowerModule
+          ),
+      },
     ],
   },
 ];

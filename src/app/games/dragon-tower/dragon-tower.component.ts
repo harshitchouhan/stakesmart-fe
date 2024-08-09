@@ -1,29 +1,33 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  ViewChild,
+  ViewEncapsulation,
+} from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { TabViewModule } from 'primeng/tabview';
 import { TooltipModule } from 'primeng/tooltip';
-
 import { ManualInputsComponent } from './manual-inputs/manual-inputs.component';
 
 @Component({
-  selector: 'app-mines',
+  selector: 'app-dragon-tower',
   standalone: true,
   imports: [
     TabViewModule,
     TooltipModule,
-    ManualInputsComponent,
     ButtonModule,
     CommonModule,
+    ManualInputsComponent,
   ],
-  templateUrl: './mines.component.html',
-  styleUrl: './mines.component.scss',
+  templateUrl: './dragon-tower.component.html',
+  styleUrl: './dragon-tower.component.scss',
   encapsulation: ViewEncapsulation.None,
 })
-export class MinesComponent {
+export class DragonTowerComponent {
   @ViewChild('beepAudio') beepAudio!: ElementRef;
   @ViewChild('bombAudio') bombAudio!: ElementRef;
-  
+
   mines: any = [];
 
   selectedMines: any = [];
@@ -31,9 +35,11 @@ export class MinesComponent {
   selectedMine: any;
   disableGame = false;
 
+  activeRow = [21, 22, 23]
+
   constructor() {
     this.mines = [];
-    for (let i = 1; i <= 25; i++) {
+    for (let i = 1; i <= 24; i++) {
       this.mines.push({ revealed: false, bomb: false, id: i, selected: false });
     }
 

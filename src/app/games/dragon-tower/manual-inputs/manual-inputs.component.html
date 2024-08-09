@@ -1,0 +1,19 @@
+<div>
+    <div class=" mb-3">
+        <label for="username">Bet Amount</label>
+        <div>
+            <p-inputNumber [(ngModel)]="value" mode="currency" inputId="currency-india" currency="INR"
+                currencyDisplay="symbol" locale="en-IN" placeholder="₹00.00" />
+        </div>
+    </div>
+    <div class="mb-4">
+        <label for="username">Difficulty</label>
+        <div>
+            <p-dropdown [options]="difficultyOptions" [(ngModel)]="optionSelected" optionLabel="label"
+                placeholder="Select Difficulty Level" />
+        </div>
+    </div>
+    <div>
+        <p-button label="Bet" class="bet-btn" />
+    </div>
+</div>
