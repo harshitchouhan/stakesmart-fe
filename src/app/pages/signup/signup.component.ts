@@ -19,24 +19,22 @@ import { TabViewModule } from 'primeng/tabview';
 
 import { OtpComponent } from '../../shared/otp/otp.component';
 import { PlayerSignupComponent } from './player-signup/player-signup.component';
+import { PromotorSignupComponent } from './promotor-signup/promotor-signup.component';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
   imports: [
     FormsModule,
-
     ButtonModule,
-
     CommonModule,
-
     DividerModule,
-
     TabViewModule,
     BadgeModule,
     AvatarModule,
     RouterModule,
     PlayerSignupComponent,
+    PromotorSignupComponent
   ],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss',
@@ -49,6 +47,7 @@ export class SignupComponent {
   date!: any;
 
   ref!: any;
+  activeIndex: any = 1;
 
   constructor(
     private titleService: Title,

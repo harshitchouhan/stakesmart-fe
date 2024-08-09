@@ -1,1 +1,118 @@
-<p>promotor-signup works!</p>
+<p-stepper>
+    <p-stepperPanel header="Personal">
+        <ng-template pTemplate="content" let-nextCallback="nextCallback" let-index="index">
+            <div class="flex flex-column h-12rem">
+                <div
+                    class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium">
+                    <div class="row mt-2">
+                        <div class="col-12 col-lg-4">
+                            <p-inputGroup>
+                                <p-inputGroupAddon>
+                                    <i class="pi pi-user"></i>
+                                </p-inputGroupAddon>
+                                <input pInputText pKeyFilter="alpha" placeholder="First Name" />
+                            </p-inputGroup>
+                        </div>
+                        <div class="col-12 mt-4 mt-lg-0 col-lg-4">
+                            <p-inputGroup>
+                                <p-inputGroupAddon>
+                                    <i class="pi pi-user"></i>
+                                </p-inputGroupAddon>
+                                <input pInputText pKeyFilter="alpha" placeholder="Last Name" />
+                            </p-inputGroup>
+                        </div>
+                        <div class="col-12 mt-4 mt-lg-0 col-lg-4">
+                            <p-inputGroup>
+                                <p-inputGroupAddon>
+                                    <i class="pi pi-envelope"></i>
+                                </p-inputGroupAddon>
+                                <input pInputText type="email" placeholder="Email" />
+                            </p-inputGroup>
+                        </div>
+                        <div class="col-12 mt-4 col-lg-6">
+                            <p-inputGroup>
+                                <p-inputGroupAddon>
+                                    <i class="pi pi-lock"></i>
+                                </p-inputGroupAddon>
+                                <p-password [toggleMask]="true" placeholder="Password">
+                                    <ng-template pTemplate="header">
+                                        <h6>Pick a password</h6>
+                                    </ng-template>
+                                    <ng-template pTemplate="footer">
+                                        <p-divider />
+                                        <p class="mt-2">Suggestions</p>
+                                        <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
+                                            <li>At least one lowercase</li>
+                                            <li>At least one uppercase</li>
+                                            <li>At least one numeric</li>
+                                            <li>Minimum 8 characters</li>
+                                        </ul>
+                                    </ng-template>
+                                </p-password>
+                            </p-inputGroup>
+                        </div>
+                        <div class="col-12 mt-4 col-lg-6">
+                            <p-inputGroup>
+                                <p-inputGroupAddon>
+                                    <i class="pi pi-lock"></i>
+                                </p-inputGroupAddon>
+                                <p-password [toggleMask]="true" placeholder="Confirm Password">
+                                    <ng-template pTemplate="header">
+                                        <h6>Pick a password</h6>
+                                    </ng-template>
+                                    <ng-template pTemplate="footer">
+                                        <p-divider />
+                                        <p class="mt-2">Suggestions</p>
+                                        <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
+                                            <li>At least one lowercase</li>
+                                            <li>At least one uppercase</li>
+                                            <li>At least one numeric</li>
+                                            <li>Minimum 8 characters</li>
+                                        </ul>
+                                    </ng-template>
+                                </p-password>
+                            </p-inputGroup>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex pt-4 justify-content-end">
+                <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit()" />
+            </div>
+        </ng-template>
+    </p-stepperPanel>
+    <p-stepperPanel header="KYC">
+        <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback"
+            let-index="index">
+            <div class="flex flex-column h-12rem">
+                <div
+                    class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium">
+                    <div class="row mt-2">
+                        <div class="col-12 col-lg-4">
+                            <p-dropdown class="mb-2" [options]="documentTypes" optionLabel="label"
+                                placeholder="Select Document Type" />
+                            <small class="d-block mt-2"><b>Note:</b> Upload front and back side of the document</small>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <p-toast />
+                            <p-fileUpload name="demo[]" [fileLimit]="2"
+                                (onUpload)="onUpload($event)" [multiple]="true" accept="image/*" maxFileSize="10000000">
+                                <ng-template pTemplate="content">
+                                    <ul *ngIf="uploadedFiles.length">
+                                        <li *ngFor="let file of uploadedFiles">
+                                            {{ file.name }} - {{ file.size }} bytes
+                                        </li>
+                                    </ul>
+                                </ng-template>
+                            </p-fileUpload>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex pt-4 justify-content-between">
+                <p-button label="Back" icon="pi pi-arrow-left" (onClick)="prevCallback.emit()" />
+                <p-button label="Submit" />
+            </div>
+        </ng-template>
+    </p-stepperPanel>
+</p-stepper>

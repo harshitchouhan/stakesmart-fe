@@ -7,7 +7,7 @@
                     <div class="col-md-12">
 
                         <form>
-                            <p-tabView styleClass="tabview-custom">
+                            <p-tabView styleClass="tabview-custom" [(activeIndex)]="activeIndex">
                                 <p-tabPanel>
                                     <ng-template pTemplate="header">
                                         <div class="text-center">
@@ -28,9 +28,7 @@
                                             </div>
                                         </div>
                                     </ng-template>
-                                    <p>
-                                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                    </p>
+                                    <app-promotor-signup></app-promotor-signup>
                                 </p-tabPanel>
                             </p-tabView>
 
