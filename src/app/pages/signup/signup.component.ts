@@ -6,15 +6,8 @@ import { RouterModule } from '@angular/router';
 import { AvatarModule } from 'primeng/avatar';
 import { BadgeModule } from 'primeng/badge';
 import { ButtonModule } from 'primeng/button';
-import { CalendarModule } from 'primeng/calendar';
 import { DividerModule } from 'primeng/divider';
 import { DialogService } from 'primeng/dynamicdialog';
-import { InputGroupModule } from 'primeng/inputgroup';
-import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
-import { InputMaskModule } from 'primeng/inputmask';
-import { InputNumberModule } from 'primeng/inputnumber';
-import { InputTextModule } from 'primeng/inputtext';
-import { PasswordModule } from 'primeng/password';
 import { TabViewModule } from 'primeng/tabview';
 
 import { OtpComponent } from '../../shared/otp/otp.component';

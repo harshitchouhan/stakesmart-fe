@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { ButtonModule } from 'primeng/button';
+import { DividerModule } from 'primeng/divider';
 import { DialogService } from 'primeng/dynamicdialog';
 import { InputGroupModule } from 'primeng/inputgroup';
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
@@ -9,6 +10,9 @@ import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { AvatarModule } from 'primeng/avatar';
+import { RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -20,6 +24,9 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     InputTextModule,
     PasswordModule,
     ButtonModule,
+    DividerModule,
+    AvatarModule,
+    RouterModule
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
