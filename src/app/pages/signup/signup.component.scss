@@ -1,4 +1,4 @@
-.login {
+.signup {
   height: 100vh;
 
   &-row {
@@ -11,6 +11,11 @@
     border: 1px solid #fff;
     border-radius: 10px;
   }
+
+  &-heading-primary {
+    font-weight: bold;
+    font-size: 2rem;
+  }
 }
 
 .p-password-input,
@@ -19,8 +24,62 @@
   border-bottom-left-radius: 0 !important;
 }
 
-.p-calendar,
-.p-inputmask,
-p-inputmask {
-  width: 100%;
+.tabview-custom {
+  & ul {
+    padding: 0;
+    justify-content: center;
+
+    & li {
+      min-width: 10rem;
+    }
+  }
+
+  & .p-avatar {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  & .p-highlight a {
+    background-color: rgba(157, 192, 255, 0.3294117647);
+  }
+
+  & .p-tabview-nav-link {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding: 0.8rem;
+
+    &:hover {
+      background-color: rgba(157, 192, 255, 0.3294117647);
+    }
+  }
+}
+
+.sso-icons {
+  background: rgba(157, 192, 255, 0.3294117647);
+  padding: 0.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+@media only screen and (max-width: 550px) {
+  .signup {
+    &-container {
+      padding: 1rem;
+    }
+  }
+
+  .tabview-custom {
+    & ul {
+      & li {
+        min-width: 8rem;
+      }
+    }
+  }
 }

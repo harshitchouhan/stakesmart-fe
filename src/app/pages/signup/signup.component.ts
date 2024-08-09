@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, ViewEncapsulation } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
+import { AvatarModule } from 'primeng/avatar';
+import { BadgeModule } from 'primeng/badge';
 import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
 import { DividerModule } from 'primeng/divider';
@@ -12,9 +14,10 @@ import { InputMaskModule } from 'primeng/inputmask';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
+import { TabViewModule } from 'primeng/tabview';
 
 import { OtpComponent } from '../../shared/otp/otp.component';
-
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -31,12 +34,16 @@ import { OtpComponent } from '../../shared/otp/otp.component';
     InputMaskModule,
     DividerModule,
     InputNumberModule,
-    OtpComponent
+    OtpComponent,
+    TabViewModule,
+    BadgeModule,
+    AvatarModule,
+    RouterModule
   ],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss',
   encapsulation: ViewEncapsulation.None,
-  providers: [DialogService]
+  providers: [DialogService],
 })
 export class SignupComponent {
   value!: string;
@@ -45,8 +52,10 @@ export class SignupComponent {
 
   ref!: any;
 
-
-  constructor(private titleService: Title, private dialogService: DialogService) {}
+  constructor(
+    private titleService: Title,
+    private dialogService: DialogService
+  ) {}
 
   ngOnInit(): void {
     this.titleService.setTitle('Signup');
@@ -57,7 +66,7 @@ export class SignupComponent {
       header: 'Enter OTP',
       width: '20rem',
       modal: true,
-      draggable: true
+      draggable: true,
     });
 
     this.ref.onClose.subscribe((response: any) => {
